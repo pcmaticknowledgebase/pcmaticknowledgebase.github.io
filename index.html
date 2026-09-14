@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Matic Knowledgebase | Login & Account Guides</title>
+
+    <style>
+        :root {
+            --primary: #1746a2;
+            --primary-dark: #0e2f73;
+            --accent: #28a9e0;
+            --text: #172033;
+            --muted: #657089;
+            --bg: #f5f8fc;
+            --white: #ffffff;
+            --border: #e4eaf2;
+            --shadow: 0 12px 35px rgba(18, 43, 78, .08);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.75;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        header {
+            background: rgba(255,255,255,.96);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            font-size: 19px;
+        }
+
+        .shield {
+            width: 40px;
+            height: 46px;
+            background: linear-gradient(145deg, var(--primary), var(--accent));
+            clip-path: polygon(50% 0, 92% 14%, 87% 63%, 50% 100%, 13% 63%, 8% 14%);
+            position: relative;
+        }
+
+        .shield:after {
+            content: "✓";
+            color: white;
+            font-weight: 900;
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            font-size: 19px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #4a5870;
+            font-size: 14px;
+            font-weight: 650;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background:
+                radial-gradient(circle at 85% 20%, rgba(40,169,224,.22), transparent 28%),
+                linear-gradient(135deg, #0e2f73, #1746a2);
+            color: white;
+            padding: 88px 0 95px;
+        }
+
+        .hero-content {
+            max-width: 790px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 30px;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #dce8ff;
+            max-width: 700px;
+        }
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .section-heading h2 {
+            font-size: 30px;
+            line-height: 1.2;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            max-width: 550px;
+        }
+
+        .posts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(18,43,78,.13);
+        }
+
+        .number {
+            display: inline-flex;
+            width: 34px;
+            height: 34px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #eaf3ff;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            line-height: 1.35;
+            margin-bottom: 13px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .read {
+            color: var(--primary);
+            font-weight: 750;
+            font-size: 14px;
+        }
+
+        .info {
+            margin-top: 60px;
+            background: #eaf3ff;
+            border: 1px solid #d7e7fa;
+            border-radius: var(--radius);
+            padding: 35px;
+        }
+
+        .info h2 {
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+        }
+
+        .info p {
+            color: #53627a;
+            max-width: 850px;
+        }
+
+        footer {
+            background: #0b1932;
+            color: #b9c6dc;
+            padding: 35px 0;
+            margin-top: 30px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 760px) {
+            .nav {
+                min-height: 68px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a:not(:first-child) {
+                display: none;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            .posts {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading p {
+                margin-top: 10px;
+            }
+
+            .footer-inner {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+        <a href="index.html" class="brand">
+            <span class="shield" aria-hidden="true"></span>
+            <span>Security Knowledgebase</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pc-matic-login-account-complete-guide.html">Login Guide</a>
+            <a href="pc-matic-sign-in-guide.html">Sign In Help</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="eyebrow">Account & Security Resources</span>
+            <h1>PC Matic Login & Account Knowledgebase</h1>
+            <p>
+                Clear, practical guides for signing in, accessing an account,
+                understanding account options, and getting the most from your
+                security service.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Login & Account Guides</h2>
+                    <p>
+                        Browse the five detailed guides below. Each article focuses
+                        on a different aspect of account access and security management.
+                    </p>
+                </div>
+            </div>
+
+            <div class="posts">
+
+                <article class="card">
+                    <span class="number">01</span>
+                    <h3>
+                        PC Matic Login Account: Complete Guide to Accessing Your Account Securely
+                    </h3>
+                    <p>
+                        Learn the basic process of accessing your account, preparing
+                        your credentials, checking your connection, and handling common
+                        login difficulties.
+                    </p>
+                    <a class="read" href="pc-matic-login-account-complete-guide.html">
+                        Read Post →
+                    </a>
+                </article>
+
+                <article class="card">
+                    <span class="number">02</span>
+                    <h3>
+                        PC Matic Login: Step-by-Step Instructions for Signing In to Your Account
+                    </h3>
+                    <p>
+                        A straightforward walkthrough covering the sign-in process,
+                        credential checks, browser considerations, and useful account
+                        access tips.
+                    </p>
+                    <a class="read" href="pc-matic-login-step-by-step.html">
+                        Read Post →
+                    </a>
+                </article>
+
+                <article class="card">
+                    <span class="number">03</span>
+                    <h3>
+                        How to Log Into My PC Matic Account and Access Security Features Easily
+                    </h3>
+                    <p>
+                        Understand how account access connects with security settings,
+                        device information, subscription details, and other useful
+                        account resources.
+                    </p>
+                    <a class="read" href="my-pc-matic-account-login-security.html">
+                        Read Post →
+                    </a>
+                </article>
+
+                <article class="card">
+                    <span class="number">04</span>
+                    <h3>
+                        PC Matic Sign In: A Simple Guide to Access Your Account Without Hassle
+                    </h3>
+                    <p>
+                        Follow an easy-to-understand approach for signing in while
+                        avoiding common mistakes involving passwords, browsers,
+                        connections, and account information.
+                    </p>
+                    <a class="read" href="pc-matic-sign-in-guide.html">
+                        Read Post →
+                    </a>
+                </article>
+
+                <article class="card">
+                    <span class="number">05</span>
+                    <h3>
+                        PC Matic Login My Account: How to Sign In and Manage Your PC Matic Services
+                    </h3>
+                    <p>
+                        Explore practical account-management concepts, including
+                        reviewing services, checking account information, and keeping
+                        your security account organized.
+                    </p>
+                    <a class="read" href="pc-matic-login-my-account-services.html">
+                        Read Post →
+                    </a>
+                </article>
+
+            </div>
+
+            <div class="info">
+                <h2>Getting Started</h2>
+                <p>
+                    If you are looking for a general overview, begin with the complete
+                    account access guide. If you already know how to reach the sign-in
+                    page and simply want a step-by-step walkthrough, the second article
+                    is a useful starting point. The remaining guides cover account
+                    access, security features, sign-in troubleshooting, and service
+                    management from different perspectives.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <span>Independent security knowledge resources.</span>
+        <span>© 2026 Knowledgebase</span>
+    </div>
+</footer>
+
+</body>
+</html>
