@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Matic Sign In: A Simple Guide to Access Your Account Without Hassle</title>
+
+    <style>
+        :root {
+            --primary: #1463ff;
+            --primary-dark: #0b45bd;
+            --navy: #10213f;
+            --text: #26354d;
+            --muted: #68768a;
+            --bg: #f5f8fc;
+            --white: #ffffff;
+            --border: #e4eaf2;
+            --success: #1c9c68;
+            --warning: #d98a16;
+            --shadow: 0 14px 40px rgba(23, 47, 82, 0.08);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .site-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--navy);
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .brand:hover {
+            color: var(--navy);
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(145deg, #1973ff, #0d4dc8);
+            box-shadow: 0 8px 20px rgba(20, 99, 255, 0.24);
+        }
+
+        .brand-mark svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .brand-text {
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 9px 14px;
+            color: #53627a;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 9px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            background: #edf4ff;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 88% 18%,
+                    rgba(62, 135, 255, 0.20),
+                    transparent 31%
+                ),
+                radial-gradient(
+                    circle at 12% 90%,
+                    rgba(45, 105, 218, 0.14),
+                    transparent 28%
+                ),
+                linear-gradient(135deg, #10213f 0%, #173c72 100%);
+            color: white;
+            padding: 82px 0 76px;
+        }
+
+        .hero-inner {
+            max-width: 880px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #b9d5ff;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 7px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 21px;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #63a1ff;
+        }
+
+        .hero h1 {
+            font-size: clamp(37px, 5.2vw, 57px);
+            line-height: 1.1;
+            letter-spacing: -1.7px;
+            margin-bottom: 21px;
+        }
+
+        .hero p {
+            max-width: 780px;
+            color: #d7e4f7;
+            font-size: 18px;
+            line-height: 1.75;
+        }
+
+        /* =========================
+           ARTICLE AREA
+        ========================= */
+
+        .article-area {
+            padding: 58px 0 80px;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 760px) 290px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .article {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 38px;
+            box-shadow: 0 8px 28px rgba(23, 47, 82, 0.05);
+        }
+
+        .article h2 {
+            color: var(--navy);
+            font-size: 27px;
+            line-height: 1.3;
+            letter-spacing: -.5px;
+            margin: 34px 0 13px;
+        }
+
+        .article h2:first-child {
+            margin-top: 0;
+        }
+
+        .article h3 {
+            color: var(--navy);
+            font-size: 20px;
+            line-height: 1.4;
+            margin: 27px 0 10px;
+        }
+
+        .article p {
+            color: var(--text);
+            font-size: 15.5px;
+            line-height: 1.8;
+            margin-bottom: 17px;
+        }
+
+        .article ul,
+        .article ol {
+            margin: 10px 0 22px 24px;
+        }
+
+        .article li {
+            margin-bottom: 9px;
+            padding-left: 3px;
+            font-size: 15px;
+        }
+
+        .step-list {
+            list-style: none;
+            margin-left: 0 !important;
+            counter-reset: steps;
+        }
+
+        .step-list li {
+            counter-increment: steps;
+            position: relative;
+            padding: 0 0 17px 48px;
+            margin-bottom: 17px;
+            border-bottom: 1px solid #edf1f6;
+        }
+
+        .step-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .step-list li::before {
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 31px;
+            height: 31px;
+            border-radius: 9px;
+            display: grid;
+            place-items: center;
+            background: #edf4ff;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .tip-box,
+        .warning-box,
+        .success-box {
+            border-radius: 11px;
+            padding: 18px 20px;
+            margin: 25px 0;
+        }
+
+        .tip-box {
+            background: #f2f7ff;
+            border: 1px solid #d7e6fb;
+            border-left: 4px solid var(--primary);
+        }
+
+        .tip-box strong {
+            color: #1253c7;
+        }
+
+        .warning-box {
+            background: #fff8ec;
+            border: 1px solid #f5dfb4;
+            border-left: 4px solid var(--warning);
+        }
+
+        .warning-box strong {
+            color: #95620e;
+        }
+
+        .success-box {
+            background: #edf9f4;
+            border: 1px solid #cfeede;
+            border-left: 4px solid var(--success);
+        }
+
+        .success-box strong {
+            color: #14764f;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            position: sticky;
+            top: 98px;
+        }
+
+        .side-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 23px;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 28px rgba(23, 47, 82, 0.05);
+        }
+
+        .side-card h3 {
+            color: var(--navy);
+            font-size: 17px;
+            margin-bottom: 13px;
+        }
+
+        .side-card ul {
+            list-style: none;
+        }
+
+        .side-card li {
+            border-bottom: 1px solid #edf1f6;
+        }
+
+        .side-card li:last-child {
+            border-bottom: 0;
+        }
+
+        .side-card a {
+            display: block;
+            padding: 9px 0;
+            color: #53627a;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .side-card a:hover {
+            color: var(--primary);
+        }
+
+        /* =========================
+           RELATED
+        ========================= */
+
+        .related {
+            margin-top: 35px;
+            background: #f5f8fc;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .related h2 {
+            margin-top: 0;
+            font-size: 23px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .related-card {
+            display: block;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            padding: 15px;
+            transition: .2s ease;
+        }
+
+        .related-card:hover {
+            border-color: #c9d9ef;
+            transform: translateY(-2px);
+        }
+
+        .related-card strong {
+            display: block;
+            color: var(--navy);
+            font-size: 14px;
+            line-height: 1.45;
+            margin-bottom: 4px;
+        }
+
+        .related-card span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .site-footer {
+            background: #0d1b33;
+            color: #9eacc0;
+            padding: 42px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-mark {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: #183257;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #aab8cb;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 18px;
+            }
+
+            .side-card {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .nav {
+                min-height: 68px;
+            }
+
+            .nav-links {
+                gap: 2px;
+            }
+
+            .nav-links a {
+                padding: 8px 9px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: min(100% - 26px, 1120px);
+            }
+
+            .brand-text {
+                display: none;
+            }
+
+            .hero {
+                padding: 62px 0 58px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .article-area {
+                padding: 35px 0 55px;
+            }
+
+            .article {
+                padding: 24px 20px;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container nav">
+
+        <a href="index.html" class="brand" aria-label="Knowledgebase home">
+
+            <span class="brand-mark">
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true">
+
+                    <path
+                        d="M12 2.8L19 5.5V10.9C19 15.5 16.2 19.5 12 21.2C7.8 19.5 5 15.5 5 10.9V5.5L12 2.8Z"
+                        stroke="white"
+                        stroke-width="1.8"
+                        stroke-linejoin="round"/>
+
+                    <path
+                        d="M8.8 11.8L11 14L15.5 9.4"
+                        stroke="white"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+
+                </svg>
+            </span>
+
+            <span class="brand-text">
+                Security Knowledgebase
+            </span>
+
+        </a>
+
+        <nav aria-label="Main navigation">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pc-matic-login-account-complete-guide.html">
+                        Login Guide
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pc-matic-login-step-by-step.html">
+                        Sign In
+                    </a>
+                </li>
+
+                <li>
+                    <a href="how-to-log-into-my-pc-matic-account.html">
+                        My Account
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+</header>
+
+<section class="hero">
+
+    <div class="container hero-inner">
+
+        <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Account Access · Guide 04
+        </div>
+
+        <h1>
+            PC Matic Sign In: A Simple Guide to Access Your Account Without Hassle
+        </h1>
+
+        <p>
+            Follow a straightforward approach to signing in, handling common
+            login problems, and keeping your account access secure.
+        </p>
+
+    </div>
+
+</section>
+
+<main class="article-area">
+
+    <div class="container article-layout">
+
+        <article class="article">
+
+            <h2 id="overview">
+                Getting Started With Account Sign In
+            </h2>
+
+            <p>
+                Signing in to an online security account should normally be a
+                simple process. You need the correct account credentials,
+                a supported web browser, and access to the legitimate account
+                sign-in page. Taking a moment to verify these basics can help
+                avoid many of the problems that make a routine login seem more
+                complicated than it needs to be.
+            </p>
+
+            <p>
+                Whether you are accessing your account to review information,
+                check services, or manage account-related settings, it is
+                useful to follow the same basic process each time. Keeping
+                your credentials secure and avoiding unfamiliar login pages
+                are equally important parts of the sign-in experience.
+            </p>
+
+            <div class="tip-box">
+                <strong>Quick tip:</strong>
+                If you already know your account email and password, begin
+                with the official sign-in page rather than following an
+                unexpected login link received through email or a message.
+            </div>
+
+            <h2 id="before-login">
+                What to Check Before Signing In
+            </h2>
+
+            <p>
+                Before entering any account information, make sure your
+                device is connected to the internet and that your browser is
+                functioning normally. If several websites are failing to load,
+                the problem may be related to your connection rather than your
+                account.
+            </p>
+
+            <p>
+                You should also make sure you know which email address is
+                associated with the account. Using a different email address
+                can lead to an unsuccessful login even when the password you
+                entered is correct for another account.
+            </p>
+
+            <ul>
+                <li>Use a trusted personal device whenever possible.</li>
+                <li>Check that your internet connection is working.</li>
+                <li>Use an updated web browser.</li>
+                <li>Have the correct account email address available.</li>
+                <li>Know your current password before starting.</li>
+            </ul>
+
+            <h2 id="steps">
+                Simple PC Matic Sign In Steps
+            </h2>
+
+            <p>
+                The following sequence provides a practical way to approach
+                the sign-in process without unnecessary steps.
+            </p>
+
+            <ol class="step-list">
+
+                <li>
+                    <strong>Open a trusted web browser.</strong>
+                    Start with a browser installed on a device you trust.
+                    Keeping the browser updated can also help prevent
+                    compatibility problems.
+                </li>
+
+                <li>
+                    <strong>Go to the legitimate account page.</strong>
+                    Navigate to the appropriate official account sign-in page.
+                    Avoid entering credentials on pages reached through
+                    suspicious or unexpected links.
+                </li>
+
+                <li>
+                    <strong>Enter your account email.</strong>
+                    Type the email address associated with your account.
+                    Double-check spelling before continuing.
+                </li>
+
+                <li>
+                    <strong>Enter your password.</strong>
+                    Enter the current password carefully. Passwords are
+                    generally case-sensitive, so capitalization matters.
+                </li>
+
+                <li>
+                    <strong>Submit the sign-in form.</strong>
+                    After reviewing the information, select the available
+                    sign-in option and wait for the account page to load.
+                </li>
+
+                <li>
+                    <strong>Review your account area.</strong>
+                    Once signed in, look through the available account and
+                    service options relevant to your needs.
+                </li>
+
+            </ol>
+
+            <h2 id="credentials">
+                Entering Your Credentials Correctly
+            </h2>
+
+            <p>
+                Incorrect credentials are among the most common causes of
+                unsuccessful sign-in attempts. When entering an email address,
+                check for accidental spaces, missing characters, or typing
+                mistakes.
+            </p>
+
+            <p>
+                Passwords can be especially easy to mistype when they contain
+                uppercase letters, numbers, or special characters. If you are
+                manually entering a complex password, take a moment to check
+                that each character was entered as intended.
+            </p>
+
+            <p>
+                If your browser fills in credentials automatically, verify
+                that the saved information belongs to the correct account.
+                An old saved password can cause repeated login failures.
+            </p>
+
+            <h2 id="forgot">
+                Forgot Your Password?
+            </h2>
+
+            <p>
+                If you cannot remember your password, avoid repeatedly trying
+                random combinations. Use the password recovery option provided
+                on the legitimate sign-in page instead.
+            </p>
+
+            <p>
+                Follow the recovery instructions and provide the information
+                requested. If an email is sent to your recovery or registered
+                address, check your inbox as well as spam or junk folders.
+            </p>
+
+            <div class="warning-box">
+                <strong>Keep your password private:</strong>
+                Legitimate account recovery should not require you to disclose
+                your password to another person. Never send your password in
+                an email, chat message, or support conversation unless a
+                trusted service specifically provides a secure authentication
+                mechanism that does not expose the password.
+            </div>
+
+            <h2 id="login-problems">
+                Common Sign In Problems and Solutions
+            </h2>
+
+            <p>
+                Sometimes the credentials are correct but the sign-in process
+                still does not work as expected. In those situations, basic
+                browser troubleshooting can help identify the cause.
+            </p>
+
+            <h3>
+                The Login Page Will Not Load
+            </h3>
+
+            <p>
+                Check your internet connection and refresh the page. If other
+                websites load normally, try opening the account page in a
+                private browsing window. This can help determine whether
+                stored browser data is interfering with the page.
+            </p>
+
+            <h3>
+                The Password Is Rejected
+            </h3>
+
+            <p>
+                Recheck the email address and password. Pay attention to
+                capitalization and accidental spaces. If you are confident
+                that you do not remember the current password, use the
+                available recovery process instead of continuing to guess.
+            </p>
+
+            <h3>
+                The Page Works in One Browser but Not Another
+            </h3>
+
+            <p>
+                Browser extensions, cached information, or browser settings
+                can sometimes affect how websites behave. Updating the
+                browser or testing a private window can help isolate the issue.
+            </p>
+
+            <h3>
+                The Account Still Cannot Be Accessed
+            </h3>
+
+            <p>
+                If basic troubleshooting does not resolve the problem, review
+                the account recovery options available through the legitimate
+                service. Keep any relevant account information available so
+                that you can follow the appropriate recovery instructions.
+            </p>
+
+            <h2 id="security">
+                Keep Your Sign In Secure
+            </h2>
+
+            <p>
+                Convenience should not come at the expense of account security.
+                Use a strong, unique password for your account and avoid
+                reusing the same password across multiple important services.
+            </p>
+
+            <p>
+                Be cautious when signing in from public or shared computers.
+                If you use a device that other people can access, do not allow
+                the browser to save your password and remember to sign out
+                before leaving the device.
+            </p>
+
+            <p>
+                Phishing is another reason to pay attention to where you enter
+                credentials. An unexpected message may contain a link designed
+                to resemble a familiar login page. When in doubt, navigate to
+                the service directly rather than using the questionable link.
+            </p>
+
+            <div class="success-box">
+                <strong>Good security practice:</strong>
+                Use a unique password, keep your browser updated, protect
+                access to your email account, and verify the website before
+                entering sensitive information.
+            </div>
+
+            <h2 id="after-login">
+                What to Do After You Sign In
+            </h2>
+
+            <p>
+                After successfully signing in, take a moment to review the
+                account area. Depending on your account and services, you may
+                find information related to your devices, subscriptions,
+                settings, or other available features.
+            </p>
+
+            <p>
+                If your main goal is to understand account access and available
+                security features, the
+                <a href="how-to-log-into-my-pc-matic-account.html">
+                    My Account and security features guide
+                </a>
+                provides a broader overview.
+            </p>
+
+            <p>
+                If you need help understanding the complete account login
+                process from beginning to end, you can also visit the
+                <a href="pc-matic-login-account-complete-guide.html">
+                    complete login account guide
+                </a>.
+            </p>
+
+            <h2 id="easier">
+                Making Future Sign Ins Easier
+            </h2>
+
+            <p>
+                Once you have successfully accessed your account, you can make
+                future sign-ins more convenient by establishing a consistent
+                routine. Keep your recovery information accessible and make
+                sure you remember which email address is associated with the
+                account.
+            </p>
+
+            <p>
+                A trusted password manager can also help you create and store
+                unique passwords without requiring you to memorize every
+                character. If you choose to use browser-based password
+                storage, protect your device with a strong device password
+                or other appropriate security controls.
+            </p>
+
+            <p>
+                Finally, bookmark the legitimate account page on your own
+                device if you frequently need to sign in. This can reduce the
+                temptation to use links from unsolicited messages.
+            </p>
+
+            <h2>
+                Final Thoughts
+            </h2>
+
+            <p>
+                Signing in does not need to be complicated. Start with a
+                trusted browser, navigate to the legitimate account page,
+                enter the correct email address and password, and review the
+                information before submitting the form.
+            </p>
+
+            <p>
+                If something goes wrong, check your credentials first and then
+                troubleshoot the browser or connection. Password recovery is
+                preferable to repeatedly guessing a forgotten password.
+            </p>
+
+            <p>
+                For a detailed walkthrough, continue with the
+                <a href="pc-matic-login-step-by-step.html">
+                    step-by-step login instructions
+                </a>.
+                When you want information about managing account services,
+                read the
+                <a href="pc-matic-login-my-account.html">
+                    My Account management guide
+                </a>.
+            </p>
+
+            <section class="related">
+
+                <h2>
+                    Related Guides
+                </h2>
+
+                <div class="related-grid">
+
+                    <a
+                        class="related-card"
+                        href="pc-matic-login-account-complete-guide.html">
+
+                        <strong>
+                            PC Matic Login Account: Complete Guide
+                        </strong>
+
+                        <span>
+                            Guide 01 · Complete account access overview
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="related-card"
+                        href="pc-matic-login-step-by-step.html">
+
+                        <strong>
+                            PC Matic Login: Step-by-Step Instructions
+                        </strong>
+
+                        <span>
+                            Guide 02 · Detailed sign-in walkthrough
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="related-card"
+                        href="how-to-log-into-my-pc-matic-account.html">
+
+                        <strong>
+                            How to Log Into My PC Matic Account
+                        </strong>
+
+                        <span>
+                            Guide 03 · Account and security features
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="related-card"
+                        href="pc-matic-login-my-account.html">
+
+                        <strong>
+                            PC Matic Login My Account
+                        </strong>
+
+                        <span>
+                            Guide 05 · Manage account services
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </article>
+
+        <aside class="sidebar">
+
+            <div class="side-card">
+
+                <h3>
+                    On This Page
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#overview">
+                            Getting started
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#before-login">
+                            Before signing in
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#steps">
+                            Sign in steps
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#credentials">
+                            Credentials
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#forgot">
+                            Password recovery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#login-problems">
+                            Login problems
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#security">
+                            Sign-in security
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#after-login">
+                            After signing in
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="side-card">
+
+                <h3>
+                    Account Guides
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Knowledgebase Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pc-matic-login-account-complete-guide.html">
+                            Complete Login Guide
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pc-matic-login-step-by-step.html">
+                            Step-by-Step Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="how-to-log-into-my-pc-matic-account.html">
+                            My Account Guide
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pc-matic-login-my-account.html">
+                            Account Management
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+        <div class="footer-brand">
+
+            <span class="footer-mark">
+
+                <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+
+                    <path
+                        d="M12 3L19 5.7V11C19 15.3 16.3 19.2 12 21C7.7 19.2 5 15.3 5 11V5.7L12 3Z"
+                        stroke="#77adff"
+                        stroke-width="1.7"
+                        stroke-linejoin="round"/>
+
+                    <path
+                        d="M8.8 12L11 14.1L15.3 9.8"
+                        stroke="#77adff"
+                        stroke-width="1.7"
+                        stroke-linecap="round"/>
+
+                </svg>
+
+            </span>
+
+            <span class="footer-copy">
+                Security Knowledgebase · Independent informational resource
+            </span>
+
+        </div>
+
+        <ul class="footer-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="how-to-log-into-my-pc-matic-account.html">
+                    Previous Guide
+                </a>
+            </li>
+
+            <li>
+                <a href="pc-matic-login-my-account.html">
+                    Next Guide
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
